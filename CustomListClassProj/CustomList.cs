@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProj
 {
-    class Class1
+    public class CustomList<T>
     {
+        T[] Stuff;
+        public int Count;
+
+        public void Add(T stuff)
+        {
+        }
     }
 }
