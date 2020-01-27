@@ -36,41 +36,52 @@ namespace CustomListClassTest
             //assert
             Assert.AreEqual(expected, actual);
         }
-        public void ListOndexNrmbrtCount()
+        public void ListIndexNumberCount()
         {
-        //Test Count
-        CustomList<int> ListOfMine = new CustomList<int>;
-        int actual;
-        int excpected;
-        //Arrange
-        
-        int actual;
+            //Test Count
+            //Arrange
+            CustomList<int> ListOfMine = new CustomList<int>();
+            int actual;
             int excpected = ListOfMine.Count;
-        //ActL
-        ListOfMine.Add(7);
-        ListOfMine.Add(2);
-        ListOfMine.Add(3);
-            actual = ListOfMine[3]
-        //Assertf
+
+            //ActL
+            ListOfMine.Add(7);
+            ListOfMine.Add(2);
+            ListOfMine.Add(3);
+            actual = ListOfMine[];
+            //Assertf
+            Assert.AreEqual(expected, actual);
+        }
+        //Make sure 0 does not get overwritten
+        {
+        //Arrange
+        CustomList<int> ListOfMine = new CustomList<int>();
+        int actual;
+        int expected;
+        //Act
+
+        //Assert
         Assert.AreEqual(expected, actual);
-    }
-       //Make sure 0 does not get overwritten
-        
-        
-        //test adding the same thing twice and both exist
+      
+        }
+    //test adding the same thing twice and both exist
+    {
+    //Arrange
 
+    //Act
 
+    //Assert
+    Assert.AreEqual(expected, actual);
+      }
         //test capacity Growth after 5 are added
-        //
-
-
+       { 
         //Arrange
 
         //Act
 
         //Assert
         Assert.AreEqual(expected, actual);
-       
+       }
       
         
 
