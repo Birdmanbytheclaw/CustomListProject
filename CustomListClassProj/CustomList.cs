@@ -32,6 +32,7 @@ namespace CustomListClassProj
 
         public void Add(T stuff)
         {
+
         }
         
     }

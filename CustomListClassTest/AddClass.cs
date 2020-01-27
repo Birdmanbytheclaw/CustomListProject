@@ -34,7 +34,7 @@ namespace CustomListClassTest
             //act
             ListOfMine.Add(7);
             ListOfMine.Add(2);
-            actual = ListOfMine[2];
+            actual = ListOfMine[0];
 
             //assert
             Assert.AreEqual(expected, actual);
