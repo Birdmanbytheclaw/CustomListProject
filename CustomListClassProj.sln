@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListClassProj", "CustomListClassProj\CustomListClassProj.csproj", "{79B12FE4-5301-4764-B9C4-516D76368541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListClassTest", "CustomListClassTest\CustomListClassTest.csproj", "{78D94723-421D-463F-A1F2-FC513F237557}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListClassTestAdd", "CustomListClassTest\CustomListClassTestAdd.csproj", "{78D94723-421D-463F-A1F2-FC513F237557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListClassTestRemove", "CustomListClassTestRemove\CustomListClassTestRemove.csproj", "{BB1A9322-15EF-4833-ABC9-2414FBD0ECCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{78D94723-421D-463F-A1F2-FC513F237557}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78D94723-421D-463F-A1F2-FC513F237557}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78D94723-421D-463F-A1F2-FC513F237557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB1A9322-15EF-4833-ABC9-2414FBD0ECCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB1A9322-15EF-4833-ABC9-2414FBD0ECCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB1A9322-15EF-4833-ABC9-2414FBD0ECCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB1A9322-15EF-4833-ABC9-2414FBD0ECCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
