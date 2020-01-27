@@ -42,29 +42,35 @@ namespace CustomListClassTest
             //Arrange
             CustomList<int> ListOfMine = new CustomList<int>();
             int actual;
-            int excpected = ListOfMine.Count;
+            int excpected = 3;
 
             //ActL
             ListOfMine.Add(7);
             ListOfMine.Add(2);
             ListOfMine.Add(3);
-            actual = ListOfMine[];
+            actual = ListOfMine.Count;
             //Assertf
             Assert.AreEqual(expected, actual);
         }
         //Make sure 0 does not get overwritten
+        public void CheckingZeroIndewForOverwtite()
         {
         //Arrange
         CustomList<int> ListOfMine = new CustomList<int>();
         int actual;
-        int expected;
-        //Act
+        int Value = 2;
+        int SecondValue = 17;
+            //Act
+            ListOfMine.Add(Value);
+            ListOfMine.Add(SecondValue);
+            actual = ListOfMine[1];
 
-        //Assert
+            //Assert
         Assert.AreEqual(expected, actual);
       
         }
     //test adding the same thing twice and both exist
+    public void AddingSameThingTwice()
     {
     //Arrange
 
