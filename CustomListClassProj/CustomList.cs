@@ -6,35 +6,107 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProj
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         T[] Stuff;
-        public int Count;
-        public int Capacity;
-        public CustomList()
+        T[] TempStuff;
+        T item;
+        private int TempCount;
+        public int Count
         {
-            Count = 0;
-            Capacity = 4;
+            get {
+                return TempCount;
+                    }
+        }
+        private int TempCapacity;
+        public int Capacity
+        {
+            get {
+                return TempCapacity;   
+            }
+        }
+        public int FollowingIndex;
+        
+        public CustomList()
+        {            
             Stuff = new T[Capacity];
-
+            TempCount = 0;
         }
         public T this[int index]
         {
             get
             {
-                return Stuff[index];
+                if ((index < 0) || (index > TempCount))
+                {
+                    throw new ArgumentOutOfRangeException("Cannot Be Done");
+                }
+                else
+                {
+                    return Stuff[index];
+                }
             }
             set
             {
-                this[index] = value;
+                
+                 Stuff[index] = value;
+            }
+        }
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < TempCount; i++)
+            {
+                yield return Stuff[i];
             }
         }
 
         public void Add(T stuff)
         {
+            CheckCapacity();
+            Countincrease();
+            AddToNextindex(input);
 
         }
+        public void CheckCapacity()
+        {
+            if (TempCount == TempCapacity)
+            {
+                CapacityEnlarge();
+                CreateTempArray();
+                CombineTempAndPreviouArrays();
+            }
+        }
+        public void CreateTempArray()
+        {
+            TempStuff = T[TempCapacity];
+            for (int i = 0; i < TempCount; i++)
+            {
+                TempStuff[i] = Stuff;
+            }
+        }
+        public void CombineTempAndPreviousArrays()
+        {
+            for (int i = 0; i < TempCount; i++)
+            {
+                TempStuff[i] = Stuff[i];
+            }
+            Stuff = TempStuff;
+        }
+        public void CapacityEnlarge()
+        {
+            if (TempCapacity == 0)
+            {
+                InitialArray();
+                int NewCapacity = 4;
+                TempCapacity = NewCapacity;
+            }
 
+        }
+        public void StuffAddedToNextIndex(T input)
+        {
+            Stuff[NextSpot] = input;
+            NextSpot += 1;
+        }
+        public void
         public bool Remove(T stuff)
             {
             bool removed = false;
