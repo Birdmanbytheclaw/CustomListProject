@@ -8,6 +8,7 @@ namespace CustomListClassProj
 {
     public class CustomList<T> : IEnumerable
     {
+        //member Variables
         T[] Stuff;
         T[] TempStuff;
         T item;
@@ -32,6 +33,7 @@ namespace CustomListClassProj
             Stuff = new T[Capacity];
             TempCount = 0;
         }
+        public int NextSpot;
         public T this[int index]
         {
             get
@@ -72,7 +74,7 @@ namespace CustomListClassProj
             {
                 CapacityEnlarge();
                 CreateTempArray();
-                CombineTempAndPreviouArrays();
+                CombineTempAndPreviousArrays();
             }
         }
         public void CreateTempArray()
@@ -80,7 +82,7 @@ namespace CustomListClassProj
             TempStuff = T[TempCapacity];
             for (int i = 0; i < TempCount; i++)
             {
-                TempStuff[i] = Stuff;
+                TempStuff[i] = Stuff[i];
             }
         }
         public void CombineTempAndPreviousArrays()
@@ -110,14 +112,14 @@ namespace CustomListClassProj
         {
             TempCapacity = 1;
             Stuff = new T[TempCapacity];
-            Stuff[NextSpot] = Stuff;
+            Stuff[NextSpot] = Stuff[];
         }
         public void AddToCount()
         {
             TempCount += 1;
         }
 
-        //Remove Methods
+        //Remove Method
         public bool Remove(T stuff)
             {
             bool removed = false;

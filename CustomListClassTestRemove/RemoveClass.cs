@@ -155,9 +155,7 @@ namespace CustomListClassTestRemove
         [TestMethod]
         public void RemoveOneThingButAddThree()
         {
-
-            //Assert
-            Assert.AreEqual(expected, actual);
+            //Arrange
             CustomList<string> ListOfMine = new CustomList<string>();
             string WordOne = "Analogy";
             string WordTwo = "Academy";
