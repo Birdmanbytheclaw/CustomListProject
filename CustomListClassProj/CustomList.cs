@@ -26,7 +26,7 @@ namespace CustomListClassProj
             }
         }
         public int FollowingIndex;
-        
+        //Constructor
         public CustomList()
         {            
             Stuff = new T[Capacity];
@@ -58,12 +58,12 @@ namespace CustomListClassProj
                 yield return Stuff[i];
             }
         }
-
+        //general Methods
         public void Add(T stuff)
         {
             CheckCapacity();
-            Countincrease();
-            AddToNextindex(input);
+            AddToCount();
+            StuffAddedToNextIndex(input);
 
         }
         public void CheckCapacity()
@@ -95,7 +95,7 @@ namespace CustomListClassProj
         {
             if (TempCapacity == 0)
             {
-                InitialArray();
+                InitalArray();
                 int NewCapacity = 4;
                 TempCapacity = NewCapacity;
             }
@@ -106,7 +106,18 @@ namespace CustomListClassProj
             Stuff[NextSpot] = input;
             NextSpot += 1;
         }
-        public void
+        public void InitalArray()
+        {
+            TempCapacity = 1;
+            Stuff = new T[TempCapacity];
+            Stuff[NextSpot] = Stuff;
+        }
+        public void AddToCount()
+        {
+            TempCount += 1;
+        }
+
+        //Remove Methods
         public bool Remove(T stuff)
             {
             bool removed = false;
@@ -115,29 +126,24 @@ namespace CustomListClassProj
             int j = 0;
             for (int i = j; i < Count; i++)
             {
-                if(Equals(ListOfMine[i], stuff) && (i == j))
+                if(Equals(TempStuff[i], stuff) && (i == j))
             {
                     removed = true;
 
             }
             else
             {
-                    Temporary[j] = ListOfMine[i];
+                    Temporary[j] = TempStuff[i];
                     j++;
             }
 
             }
             if (removed)
             {
-                Count--;
-                ListofMine = Temporary;
+                TempCount--;
+                TempStuff = Temporary;
 
             }
-
-
-
-
-
             return removed;
           
         }
