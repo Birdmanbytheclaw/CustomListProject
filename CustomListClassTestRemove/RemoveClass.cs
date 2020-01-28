@@ -60,7 +60,45 @@ namespace CustomListClassTestRemove
 
         }
         [TestMethod]
+        public void RemoveTheFirstInstanceOfAValue_SecondInstanceStaysAndShiftsDown()
+        {
+            //Arrange
+            CustomList<string> ListOfMine = new CustomList<string>();
+            string FirstWord = "Calamity";
+            string SecondWord = "Profanity";
+            string ThirdWord = "Humanity";
+            string FourthWord = "anatomy";
+            string expected = FirstWord;
+            string actual;
+            //Act
+            ListOfMine.Add(SecondWord);
+            ListOfMine.Add(FirstWord);
+            ListOfMine.Add(ThirdWord);
+            ListOfMine.Add(FirstWord);
+            ListOfMine.Add(FourthWord);
+            ListOfMine.Remove(FirstWord);
+            actual = ListOfMine[2];
+            //Assert
+            Assert.AreEqual(expected, actual);
 
+        }
+        [TestMethod]
+        public void RemoveFirstInstanceThenDecreaseCountByOne()
+        {
+            //Arrange
+            CustomList<string> ListofMine = new CustomList<string>();
+            string WordOne = "tragedy";
+            string WordTwo = "Rhapsody";
+            string WordThree = "Gallantry";
+            string WordFour = "travesty";
+            int expected = 4;
+            int actual;
+            //Act
+            ListofMine.Add(WordTwo)
+            //Assert
+            Assert.AreEqual(expected, actual);
 
+        }
+        
     }
 }
