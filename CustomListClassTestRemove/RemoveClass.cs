@@ -94,11 +94,53 @@ namespace CustomListClassTestRemove
             int expected = 4;
             int actual;
             //Act
-            ListofMine.Add(WordTwo)
+            ListofMine.Add(WordTwo);
+            ListofMine.Add(WordOne);
+            ListofMine.Add(WordThree);
+            ListofMine.Add(WordOne);
+            ListofMine.Add(WordFour);
+            ListofMine.Remove(WordOne);
+            actual = ListofMine.Count;
             //Assert
             Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
+        public void RemoveMultipleFromCountDrecresingByTwo()
+        {
+            //Arrange
+            CustomList<string> ListOfMine = new CustomList<string>();
+            string WordOne = "Naturally";
+            string WotdTwo = "Tacfully";
+            string WordThree = "Callously";
+            string WordFour = "Valiantly";
+            string WordFive = "gallantry";
+            int expected = 3;
+            int actual;
+            //Act
+            ListOfMine.Add(WotdTwo);
+            ListOfMine.Add(WordOne);
+            ListOfMine.Add(WordThree);
+            ListOfMine.Add(WordFour);
+            ListOfMine.Add(WordFive);
+            ListOfMine.Remove(WordOne);
+            ListOfMine.Remove(WordFive);
+            actual = ListOfMine.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void RemoveMultipleThenmoveLastItemToindev2()
+        { 
         
+        }
+
+        //Arrange
+
+        //Act
+
+        //Assert
+        Assert.AreEqual(expected, actual);
+      
     }
 }
