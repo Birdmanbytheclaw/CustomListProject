@@ -138,7 +138,7 @@ namespace CustomListClassTest
     actual = ListOfMine.Capacity;
     //assert
     Assert.AreEqual(expected, actual);
-            }
+             }
         
    }
 }
