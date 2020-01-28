@@ -34,7 +34,10 @@ namespace CustomListClassProj
         {
 
         }
-        
+
+        public void Remove(T stuff)
+            { 
+        }
     }
     
 }

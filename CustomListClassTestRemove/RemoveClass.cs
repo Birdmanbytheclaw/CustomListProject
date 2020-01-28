@@ -12,7 +12,7 @@ namespace CustomListClassTestRemove
         {
 
             //Arrange
-            CustomList<T> ListOfMine = new CustomList<T>;
+            CustomList<int> ListOfMine = new CustomList<int>();
             int TheValue = 5;
             int actual;
             int TheExpected = 4;
@@ -26,8 +26,41 @@ namespace CustomListClassTestRemove
         }
         [TestMethod]
         public void RemoveZeroButCountStaysAtOne()
-        { 
-        
+        {
+            //Arrange
+            CustomList<int> ListOfMine = new CustomList<int>();
+            int Value = 5;
+            int RemoveValue = 0;
+            int actual;
+            int TheExpected = 1;
+            //Act
+            ListOfMine.Add(Value);
+            ListOfMine.Remove(RemoveValue);
+            actual = ListOfMine.Count;
+            //Assert
+            Assert.AreEqual(TheExpected, actual);
         }
+        [TestMethod]
+        public void RemoveFirstOfTwoThenSecondMovesToIndexZero()
+        {
+
+            //Arrange
+            CustomList<int> ListOfMine = new CustomList<int>;
+            int ValueOne = 5;
+            int ValueTwo = 10;
+            int actual;
+            int expected = 10;
+            //Act
+            ListOfMine.Add(ValueOne);
+            ListOfMine.Add(ValueTwo);
+            ListOfMine.Remove(ValueOne);
+            actual = ListOfMine[0];
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+
+
     }
 }
