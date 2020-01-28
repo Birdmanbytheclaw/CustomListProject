@@ -8,7 +8,7 @@ namespace CustomListClassTestRemove
     public class RemoveClass
     {
         [TestMethod]
-        public void EmoveItemWhileCapacityStaysTheSame()
+        public void EmoveItemWhileCapacityStaysAtFour()
         {
 
             //Arrange
@@ -23,6 +23,11 @@ namespace CustomListClassTestRemove
             //Assert
             Assert.AreEqual(TheExpected, actual);
 
+        }
+        [TestMethod]
+        public void RemoveZeroButCountStaysAtOne()
+        { 
+        
         }
     }
 }
