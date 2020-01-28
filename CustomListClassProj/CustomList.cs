@@ -35,8 +35,39 @@ namespace CustomListClassProj
 
         }
 
-        public void Remove(T stuff)
-            { 
+        public bool Remove(T stuff)
+            {
+            bool removed = false;
+            T[] Temporary = new T[Capacity];
+
+            int j = 0;
+            for (int i = j; i < Count; i++)
+            {
+                if(Equals(ListOfMine[i], stuff) && (i == j))
+            {
+                    removed = true;
+
+            }
+            else
+            {
+                    Temporary[j] = ListOfMine[i];
+                    j++;
+            }
+
+            }
+            if (removed)
+            {
+                Count--;
+                ListofMine = Temporary;
+
+            }
+
+
+
+
+
+            return removed;
+          
         }
     }
     

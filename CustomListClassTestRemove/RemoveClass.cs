@@ -67,7 +67,7 @@ namespace CustomListClassTestRemove
             string FirstWord = "Calamity";
             string SecondWord = "Profanity";
             string ThirdWord = "Humanity";
-            string FourthWord = "anatomy";
+            string FourthWord = "Anatomy";
             string expected = FirstWord;
             string actual;
             //Act
@@ -87,10 +87,10 @@ namespace CustomListClassTestRemove
         {
             //Arrange
             CustomList<string> ListofMine = new CustomList<string>();
-            string WordOne = "tragedy";
+            string WordOne = "Tragedy";
             string WordTwo = "Rhapsody";
             string WordThree = "Gallantry";
-            string WordFour = "travesty";
+            string WordFour = "Travesty";
             int expected = 4;
             int actual;
             //Act
@@ -114,7 +114,7 @@ namespace CustomListClassTestRemove
             string WotdTwo = "Tacfully";
             string WordThree = "Callously";
             string WordFour = "Valiantly";
-            string WordFive = "gallantry";
+            string WordFive = "Gallantry";
             int expected = 3;
             int actual;
             //Act
@@ -130,17 +130,71 @@ namespace CustomListClassTestRemove
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void RemoveMultipleThenmoveLastItemToindev2()
-        { 
-        
+        public void RemoveMultipleThenmoveLastItemToindeX2()
+        {//Arrange
+            CustomList<string> ListOfMine = new CustomList<string>();
+            string WordOne = "Casually";
+            string WordTwo = "Fallacy";
+            string WordThree = "Passably";
+            string WordFour = "Tactfully";
+            string WordFive = "Gadgetry";
+            string expected = "Gadgetry";
+            string actual;
+            //Act
+            ListOfMine.Add(WordTwo);
+            ListOfMine.Add(WordOne);
+            ListOfMine.Add(WordThree);
+            ListOfMine.Add(WordFour);
+            ListOfMine.Add(WordFive);
+            ListOfMine.Remove(WordOne);
+            ListOfMine.Remove(WordFour);
+            actual = ListOfMine[2];
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void RemoveOneThingButAddThree()
+        {
 
-        //Arrange
+            //Assert
+            Assert.AreEqual(expected, actual);
+            CustomList<string> ListOfMine = new CustomList<string>();
+            string WordOne = "Analogy";
+            string WordTwo = "Academy";
+            string WordThree = "Formality";
+            string WordFour = "Neutrality";
+            string WordFive = "Fatality";
+            string WordSix = "Audacity";
+            string expected = "Audacity";
+            string actual;
+            //Act
+            ListOfMine.Add(WordTwo);
+            ListOfMine.Add(WordOne);
+            ListOfMine.Remove(WordOne);
+            ListOfMine.Add(WordThree);
+            ListOfMine.Add(WordFour);
+            ListOfMine.Add(WordFive);
+            ListOfMine.Add(WordSix);
 
-        //Act
+            actual = ListOfMine[4];
+            //Assert
+            Assert.AreEqual(expected, actual);
 
-        //Assert
-        Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void CheckIfListIsOutOfIndexAndDisplayIt()
+        {
+
+            //Arrange
+            CustomList<int> CheckList = new CustomList<int>;
+            int actual;
+            //Act
+            actual = CheckList[2];
+            
+
+        }
+        
       
     }
 }
