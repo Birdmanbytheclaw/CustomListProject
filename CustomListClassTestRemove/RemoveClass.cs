@@ -8,7 +8,7 @@ namespace CustomListClassTestRemove
     public class RemoveClass
     {
         [TestMethod]
-        public void EmoveItemWhileCapacityStaysAtFour()
+        public void RemoveStuffWhileCapacityStaysAtFour()
         {
 
             //Arrange
@@ -59,6 +59,52 @@ namespace CustomListClassTestRemove
             Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
+        public void RemoveThirdIndexOutOfFourWhileSecondIndexStays()
+        {
+            //Arrange
+            CustomList<int> ListOfMine = new CustomList<int>();
+            int ValueOne = 5;
+            int ValueTwo = 10;
+            int ValueThree = 15;
+            int ValueFour = 20;
+            int actual;
+            int expected = ValueTwo;
+            //Act
+            ListOfMine.Add(ValueOne);
+            ListOfMine.Add(ValueTwo);
+            ListOfMine.Add(ValueThree);
+            ListOfMine.Add(ValueFour);
+            ListOfMine.Remove(ValueThree);
+            actual = ListOfMine[1];
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void RemoveValueInListButCountStaysTheSame()
+        {
+            //Arrange
+            CustomList<int> ListOfMine = new CustomList<int>;
+            int ValueOne = 5;
+            int ValueTwo = 10;
+            int ValueThree = 15;
+            int VakueToRemove = 20;
+            int actual;
+            int expected = 3;
+            //Act
+            ListOfMine.Add(ValueOne);
+            ListOfMine.Add(ValueTwo);
+            ListOfMine.Add(ValueThree);
+            ListOfMine.Remove(VakueToRemove);
+            actual = ListOfMine.Count;
+          
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
         [TestMethod]
         public void RemoveTheFirstInstanceOfAValue_SecondInstanceStaysAndShiftsDown()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProj
 {
-    public class CustomList<T> : IEnumerable
+    public class CustomList<T> : IEnumerable where T : IComparable
     {
         //member Variables
         T[] Stuff;
