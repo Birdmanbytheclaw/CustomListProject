@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace OverloadAddTest
 {
     [TestClass]
-    public class UnitTest1
+    public class AddOverload
     {
         [TestMethod]
         public void TestMethod1()
